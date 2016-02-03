@@ -1,0 +1,312 @@
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <meta name="viewport" content="width=device-width , initial-scale=1" />
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <title>View</title>
+    <style>
+        .no-image {
+            padding-top: 300px;
+        }
+
+        .align {
+            padding-top: 25px;
+        }
+
+        .third-btn {
+            margin-top: 25px;
+        }
+
+        .dark-text {
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <div class="container">
+        <div class="row">
+            <div class="box">
+                <div class="col-lg-12">
+                    <hr>
+                    <p class="jumbotron">
+                        We are displaying only few Rooms as our security reasons!!!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="row">
+
+            <!--Start First Column-->
+            <div class="col-md-2 no-image">
+                <!--Delete the no-image class from your code, all css in this example is merely to beautify the results on this page, and is not required for the modal carousels to work-->
+                <!-- The size of your images determines the size of the modal, set them to whatever you like-->
+                <button class="btn btn-block btn-info btn-danger" data-toggle="modal" data-target=".firstModal">BathRoom</button><!--Note the data-toggle and data-target name-->
+            </div>
+            <div class="modal fade firstModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                <!--This class matches the button target-->
+                <div class="modal-dialog modal-md">
+                    <!--This will also affect your modal size, look into it-->
+                    <div class="modal-content">
+                        <div id="carousel-controls" class="carousel slide" data-ride="carousel">
+                            <!--This calls the controls for the carousel, note the id-->
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner">
+                                <div class="item active">
+                                    <img class="img-responsive" src="/Content/bath1.jpg" alt="...">
+                                    <div class="carousel-caption">
+                                        Nice clean!!!
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <img class="img-responsive" src="/Content/bath1.jpg" alt="...">
+                                    <div class="carousel-caption">
+                                        your Dream Room!!!
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- Controls -->
+                            <a class="left carousel-control" href="#carousel-controls" role="button" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left"></span>
+                            </a>
+                            <a class="right carousel-control" href="#carousel-controls" role="button" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Start Second Column-->
+            <div class="col-md-2 no-image">
+                <!--Note the different target class and id names, these are what distinguishes this modal carousel from the first-->
+                <button class="btn btn-block btn-info btn-danger" data-toggle="modal" data-target=".secondModal">Dinning</button><!--Target Here-->
+            </div>
+            <div class="modal fade secondModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                <!--Should Match Class Here-->
+                <div class="modal-dialog modal-md">
+                    <div class="modal-content">
+                        <div id="carousel-controls-2" class="carousel slide" data-ride="carousel">
+                            <!--id here should match href in controls section-->
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner">
+                                <div class="item active">
+                                    <img class="img-responsive" src="/Content/din1.jpg" alt="..." style="width: 100%">
+                                    <div class="carousel-caption">
+                                        beautiful dinning hall!!!
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <img class="img-responsive" src="/Content/din2.jpg" alt="..." style="width: 100%">
+                                </div>
+                                <div class="item">
+                                    <img class="img-responsive" src="/Content/din3.jpg" alt="..." style="width: 100%">
+                                </div>
+                            </div>
+                            <!-- Controls -->
+                            <a class="left carousel-control" href="#carousel-controls-2" role="button" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left"></span>
+                            </a>
+                            <a class="right carousel-control" href="#carousel-controls-2" role="button" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Start Third Column-->
+            <div class="col-md-2 no-image">
+                <!--Note the different target class and id names, these are what distinguishes this modal carousel from the first-->
+                <button class="btn btn-block btn-info btn-danger" data-toggle="modal" data-target=".thirdModal">Inside</button><!--Target Here-->
+            </div>
+            <div class="modal fade thirdModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                <!--Should Match Class Here-->
+                <div class="modal-dialog modal-md">
+                    <div class="modal-content">
+                        <div id="carousel-controls-3" class="carousel slide" data-ride="carousel">
+                            <!--id here should match href in controls section-->
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner">
+                                <div class="item active">
+                                    <img class="img-responsive" src="/Content/in1.jpg" alt="..." style="width: 100%">
+                                    <div class="carousel-caption">
+                                        beautiful interior!!!
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <img class="img-responsive" src="/Content/in2.jpg" alt="..." style="width: 100%">
+                                    <div class="carousel-caption">
+                                        Imported from Italy!!!
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <img class="img-responsive" src="/Content/in3.jpg" alt="..." style="width: 100%">
+                                    <div class="carousel-caption">
+                                        Eye Catching Carvings!!!
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Controls -->
+                            <a class="left carousel-control" href="#carousel-controls-3" role="button" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left"></span>
+                            </a>
+                            <a class="right carousel-control" href="#carousel-controls-3" role="button" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-2 no-image">
+                <!--Note the different target class and id names, these are what distinguishes this modal carousel from the first-->
+                <button class="btn btn-block btn-info btn-danger" data-toggle="modal" data-target=".forthModal">Outside</button><!--Target Here-->
+            </div>
+            <div class="modal fade forthModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                <!--Should Match Class Here-->
+                <div class="modal-dialog modal-md">
+                    <div class="modal-content">
+                        <div id="carousel-controls-4" class="carousel slide" data-ride="carousel">
+                            <!--id here should match href in controls section-->
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner">
+                                <div class="item active">
+                                    <img class="img-responsive" src="/Content/out1.jpg" alt="..." style="width: 100%">
+                                    <div class="carousel-caption">
+                                        beautiful Exterior!!!
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <img class="img-responsive" src="/Content/out2.jpg" alt="..." style="width: 100%">
+                                    <div class="carousel-caption">
+                                        Imported from Italy!!!
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <img class="img-responsive" src="/Content/out3.jpg" alt="..." style="width: 100%">
+                                    <div class="carousel-caption">
+                                        Eye Catching Carvings!!!
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Controls -->
+                            <a class="left carousel-control" href="#carousel-controls-4" role="button" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left"></span>
+                            </a>
+                            <a class="right carousel-control" href="#carousel-controls-4" role="button" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-2 no-image">
+                <!--Note the different target class and id names, these are what distinguishes this modal carousel from the first-->
+                <button class="btn btn-block btn-info btn-danger" data-toggle="modal" data-target=".fifthModal">Type1</button><!--Target Here-->
+            </div>
+            <div class="modal fade fifthModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                <!--Should Match Class Here-->
+                <div class="modal-dialog modal-md">
+                    <div class="modal-content">
+                        <div id="carousel-controls-5" class="carousel slide" data-ride="carousel">
+                            <!--id here should match href in controls section-->
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner">
+                                <div class="item active">
+                                    <img class="img-responsive" src="/Content/type1.jpg" alt="..." style="width: 100%">
+                                    <div class="carousel-caption">
+                                        beautiful Exterior!!!
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <img class="img-responsive" src="/Content/type11.jpg" alt="..." style="width: 100%">
+                                    <div class="carousel-caption">
+                                        Imported from Italy!!!
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <img class="img-responsive" src="/Content/type111.jpg" alt="..." style="width: 100%">
+                                    <div class="carousel-caption">
+                                        Eye Catching Carvings!!!
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Controls -->
+                            <a class="left carousel-control" href="#carousel-controls-5" role="button" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left"></span>
+                            </a>
+                            <a class="right carousel-control" href="#carousel-controls-5" role="button" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-2 no-image">
+                <!--Note the different target class and id names, these are what distinguishes this modal carousel from the first-->
+                <button class="btn btn-block btn-info btn-danger" data-toggle="modal" data-target=".sixModal">Type2</button><!--Target Here-->
+            </div>
+            <div class="modal fade sixModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                <!--Should Match Class Here-->
+                <div class="modal-dialog modal-md">
+                    <div class="modal-content">
+                        <div id="carousel-controls-6" class="carousel slide" data-ride="carousel">
+                            <!--id here should match href in controls section-->
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner">
+                                <div class="item active">
+                                    <img class="img-responsive" src="/Content/type2.jpg" alt="..." style="width: 100%">
+                                    <div class="carousel-caption">
+                                        beautiful Exterior!!!
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <img class="img-responsive" src="/Content/type22.jpg" alt="..." style="width: 100%">
+                                    <div class="carousel-caption">
+                                        Imported from Italy!!!
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <img class="img-responsive" src="/Content/type222.jpg" alt="..." style="width: 100%">
+                                    <div class="carousel-caption">
+                                        Eye Catching Carvings!!!
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Controls -->
+                            <a class="left carousel-control" href="#carousel-controls-6" role="button" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left"></span>
+                            </a>
+                            <a class="right carousel-control" href="#carousel-controls-6" role="button" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <hr />
+    <!-- Script to Activate the Carousel -->
+    <script>
+        $('.carousel').carousel({
+            interval: 5000 //changes the speed
+        })
+    </script>
+
+</body>
+</html>

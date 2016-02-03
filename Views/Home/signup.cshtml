@@ -1,0 +1,89 @@
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <meta name="viewport" content="width=device-width , initial-scale=1" />
+    <link rel="stylesheet" href="~/Content/bootstrap.css" />
+    <script type="text/javascript" src="~/Scripts/jquery-1.11.3.js"></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap.js"></script>
+    <title>Sign Up</title>
+    <script>
+        $(document).ready(function(){
+            $("#btn").click(function(){
+                var firstname = $("#firstname").val();
+                var lastname  =   $("lastname").val();
+                var email = $("#email").val();
+                var reemail = $("#reemail").val();
+                var password=$("#password").val();
+                var mobile=$("#mobile").val();
+                var cnic = $("#cnic").val();
+                var address = $("#address").val();
+                var sex = $("#inlineCheckbox1").is(":checked") || $("#inlineCheckbox2").is(":checked");
+                if (firstname == "" || lastname == "" || email == "" || reemail == "" || password == "" || mobile == "" || cnic == ""
+                    || sex == false || address == "") {
+                    alert("All fields must be filled");
+                }
+            })
+            });
+    </script>
+</head>
+<body>
+    <div class="container">
+
+        <div class="row">
+            <div class="box">
+                <div class="col-lg-12">
+                    <hr>
+                    <h2 class="intro-text text-center">Register With
+                        <strong>Besto</strong>
+                    </h2>
+                    <hr>
+                </div>
+
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-4 well well-sm">
+                <legend><a href="http://www.jquery2dotnet.com"><i class="glyphicon glyphicon-globe"></i></a>Sign up!</legend>
+                <form action="successfulsignup" method="post" class="form" role="form">
+                    <div class="row">
+                        <div class="col-xs-6 col-md-6">
+                            <input type="hidden" id="Id" name="Id" />
+                            <input class="form-control" name="firstname" placeholder="First Name" type="text" id="firstname" />
+                        </div>
+                        <div class="col-xs-6 col-md-6">
+                            <input class="form-control" name="lastname" placeholder="Last Name" type="text" id="lastname" />
+                        </div>
+                    </div>
+                    <input class="form-control" name="email" placeholder="Your Email" type="email" id="email"/>
+                    <input class="form-control" name="email" placeholder="Re-enter Email" type="email" id="reemail"/>
+                    <input class="form-control" name="password" placeholder="New Password" type="password" id="password"/>
+                    <input class="form-control" name="mobile" placeholder="Mobile" type="tel" id="mobile" />
+                    <input class="form-control" name="address" placeholder="Address" type="text" id="address"/>
+                    <input class="form-control" name="cnic" placeholder="CNIC No" type="text" id="cnic" />
+
+                    <label class="radio-inline">
+                        <input type="radio" name="sex" id="inlineCheckbox1" value="male" />
+                        Male
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="sex" id="inlineCheckbox2" value="female" />
+                        Female
+                    </label>
+                    <br />
+                    <br />
+                    <button class="btn btn-lg btn-primary btn-block" type="submit" id="btn">
+                        Sign up</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,130 @@
+@{
+    Layout = null;
+}
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="~/Content/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/bootstrap.min.css" />
+
+    <script type="text/javascript" src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap.min.js"></script>
+
+    <title>Besto Guest House</title>
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <!-- Custom Fonts -->
+
+    <link rel="stylesheet" href="/Conetnt/Bootstrap/font-awesome/css/font-awesome.min.css" type="text/css">
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="/Content/css/animate.min.css" type="text/css">
+    <!-- Custom CSS -->
+    <link href="Content/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="~/Content/simple-sidebar.css" rel="stylesheet">
+    <link rel="stylesheet" href="/Content/css/creative.css" type="text/css">
+</head>
+    <script>
+        $(document).ready(function () {
+            $("#btn").click(function () {
+                var firstname = $("#firstname").val();
+                $.getJSON('SearchResult?firstname=' + firstname, function (data) {
+                    if (data != null) {
+                        var tbl = $(document.createElement("Table"));
+                        tbl[0].setAttribute("border", "1");
+
+
+                        var tr1=$(document.createElement("tr"));
+                        var tr2= $(document.createElement("tr"));
+                        var tr3= $(document.createElement("tr"));
+                        var tr4 = $(document.createElement("tr"));
+
+                        var td1 = $(document.createElement("td"));
+                        var td2 = $(document.createElement("td"));
+                        var td3 = $(document.createElement("td"));
+                        var td4 = $(document.createElement("td"));
+                        var td5 = $(document.createElement("td"));
+                        var td6 = $(document.createElement("td"));
+                        var td7 = $(document.createElement("td"));
+
+                        td1.append("First Name :").show();
+                        td1.append(data.firstname);
+                        td2.append("Last Name :").show();
+                        td2.append(data.lastname);
+                        td3.append("Email :").show();
+                        td3.append(data.email);
+                        td4.append("Address :").show();
+                        td4.append(data.address);
+                        td5.append("Mobile :").show();
+                        td5.append(data.mobile);
+                        td6.append("CNIC :").show();
+                        td6.append(data.cnic);
+                        td7.append("Sex :").show();
+                        td7.append(data.sex);
+
+                        tr1.append(td1);
+                        tr1.append(td2);
+                        tr2.append(td3);
+                        tr2.append(td4);
+                        tr3.append(td5);
+                        tr3.append(td6);
+                        tr4.append(td7);
+                        tbl.append(tr1);
+                        tbl.append(tr2);
+                        tbl.append(tr3);
+                        tbl.append(tr4);
+                        $("#al").append(tbl);
+
+                    }
+                   
+                })
+            })
+        })
+    </script>
+
+
+<body>
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-default">
+                    <a href="#">
+
+                        <img src="/Content/adminn.png" height="50" width="50" />
+                        Admin
+                    </a>
+                </li>
+
+                 <li>
+
+                    <a href="/Admin/Add" style="left:20px;color:lightskyblue">Add Guest</a>
+                </li>
+                <li>
+                    <a href="/Admin/View_Guest" style="left:20px;color:lightskyblue">View Guests</a>
+                </li>
+                <li>
+                    <a href="/Admin/Delete" style="left:20px;color:lightskyblue">Delete Guest</a>
+                </li>
+                <li>
+                    <a href="/Admin/Search" style="left:20px;color:lightskyblue">Search Guest</a>
+                </li>
+                 <li>
+                 <a href="/Home/login" style="left:20px;color:lightskyblue">Logout</a>
+                </li>
+            </ul>
+        </div>
+
+        </div>
+        <img src="/Content/logo.png" width="400" height="74" />
+        <br />
+   
+    <div class="container text-center">
+       
+    <label for="firstname">Search</label>
+    <input id="firstname" name="firstname" required="required" type="text" />
+    <input type="button" id="btn" class="btn-success" value="Search"/>
+        </div>
+    <div id="al" style="float:right"></div>
+
+</body>
+</html>

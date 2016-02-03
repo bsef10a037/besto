@@ -1,0 +1,70 @@
+@{
+    Layout = null;
+}
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="~/Content/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/bootstrap.min.css" />
+
+    <script type="text/javascript" src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap.min.js"></script>
+
+    <title>Besto Guest House</title>
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <!-- Custom Fonts -->
+
+    <link rel="stylesheet" href="/Conetnt/Bootstrap/font-awesome/css/font-awesome.min.css" type="text/css">
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="/Content/css/animate.min.css" type="text/css">
+    <!-- Custom CSS -->
+    <link href="Content/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="~/Content/simple-sidebar.css" rel="stylesheet">
+    <link rel="stylesheet" href="/Content/css/creative.css" type="text/css">
+</head>
+
+
+<body>
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-default">
+                    <a href="#">
+
+                        <img src="/Content/adminn.png" height="50" width="50" />
+                        Admin
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/Admin/Add" style="left:20px;color:lightskyblue">Add Guest</a>
+                </li>
+                <li>
+                    <a href="/Admin/View_Guest" style="left:20px;color:lightskyblue">View Guest</a>
+                </li>
+                <li>
+                    <a href="/Admin/Delete" style="left:20px;color:lightskyblue">Delete Guest</a>
+                </li>
+                <li>
+                    <a href="/Admin/Search" style="left:20px;color:lightskyblue">Search Guest</a>
+                </li>
+                <li>
+                    <a href="/Home/login" style="left:20px;color:lightskyblue">Logout</a>
+                </li>
+            </ul>
+        </div>
+
+        </div>
+        <img src="/Content/logo.png" width="400" height="74" />
+        <br />
+
+<form action="Deletem" class="container text-center" method="post">
+    <label for="firstname">Name</label>
+    <input id="firstname" name="firstname" required="required" type="text" />            
+    <input type="submit" value="Delete" class="btn-danger"/>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,132 @@
+@{
+    Layout = null;
+}
+@using Besto.Models;
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="/Content/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="/Content/bootstrap.min.css" />
+
+    <script type="text/javascript" src="/Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="/Scripts/bootstrap.min.js"></script>
+
+    <title>Besto Guest House</title>
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <!-- Custom Fonts -->
+
+    <link rel="stylesheet" href="/Conetnt/Bootstrap/font-awesome/font-awesome.min.css" type="text/css">
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="/Content/animate.min.css" type="text/css">
+    <!-- Custom CSS -->
+    <link href="Content/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="/Content/simple-sidebar.css" rel="stylesheet">
+    <link rel="stylesheet" href="/Content/creative.css" type="text/css">
+    <script>
+        function delete_guest(firstname) {
+            window.location.href = "@Url.Action("DeleteGuest", "Admin")?firstname=" + firstname;
+        }
+        function update_guest(firstname,lastname,email,address,mobile,cnic) {
+            window.location.href = "@Url.Action("UpdateGuest", "Admin")?firstname=" + firstname + " " + lastname + " " + email + " " + address + " " + mobile + " " + cnic;
+        }
+
+    </script>
+</head>
+
+
+<body>
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-default">
+                    <a href="#">
+
+                        <img src="/Content/adminn.png" height="50" width="50" />
+                        Admin
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/Admin/Add" style="left:20px;color:lightskyblue">Add Guest</a>
+                </li>
+                <li>
+                    <a href="/Admin/View_Guest" style="left:20px;color:lightskyblue">View Guest</a>
+                </li>
+                <li>
+                    <a href="/Admin/Delete" style="left:20px;color:lightskyblue">Delete Guest</a>
+                </li>
+                <li>
+                    <a href="/Admin/Search" style="left:20px;color:lightskyblue">Search Guest</a>
+                </li>
+                <li>
+                    <a href="/Home/login" style="left:20px;color:lightskyblue">Logout</a>
+                </li>
+            </ul>
+        </div>
+
+        </div>
+        <img src="/Content/logo.png" width="400" height="74" />
+        <br />
+    
+        @if(TempData["notice"] != null) {
+            <p class="alert alert-danger" style="text-align:right;">@TempData["notice"]</p>
+        }
+     <div class="container-fluid" >
+         
+        <table border="1" style="float:right" >
+            @foreach (user s in Model)
+            {
+                <tr>
+                    <td>
+                        FirstName:  @s.firstname
+                    </td>
+                    <td>
+                        LastName:   @s.lastname
+                    </td>
+                </tr> 
+                <tr>
+                    <td>
+                        Email:    @s.email
+                    </td>
+                    <td>
+                        Address:   @s.address
+                    </td>
+                </tr> 
+                <tr>
+                    <td>
+                        Mobile:    @s.mobile
+                    </td>
+                    <td>
+                        CNIC:       @s.cnic
+                    </td>
+                </tr> 
+                <tr>
+                    <td>
+                        Sex:    @s.sex
+                    </td>
+                   
+                </tr>
+                    <tr>
+                    <td>
+                        <a href="#" class="btn btn-danger" onclick="delete_guest('@s.firstname')">Delete</a>
+                        
+                    </td>
+                        <td>
+                            <a href="#" class="btn btn-success" onclick="update_guest('@s.firstname.Trim()','@s.lastname.Trim()',' @s.email.Trim()','@s.address.Trim()','@s.mobile.ToString().Trim()','@s.cnic.Trim()')" id="btn">Update</a>
+                        </td>
+                </tr> 
+                 
+            }
+        </table>
+            
+        
+    </div>
+
+        
+
+
+
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <meta name="viewport" content="width=device-width , initial-scale=1" />
+    <link rel="stylesheet" href="~/Content/bootstrap.css" />
+    <script type="text/javascript" src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap.js"></script>
+    
+    <link href="~/Content/DatePicker/bootstrap-datepicker.css" rel="stylesheet" />
+    <script src="~/Content/DatePicker/bootstrap-datepicker.js"></script>
+    <title>@ViewBag.Title</title>
+    <style>
+        body {
+        background-image:url("/Content/bg.jpg");
+        background-color: #cccccc;
+} 
+    </style>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    @if (Session["check"] == null)
+    {
+                 <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
+                <a class="navbar-brand" href="index.cshtml">
+                    <img src="~/Content/logo.png" /> </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav  nav-pills">
+                    <li>
+                        <a href="/Home/index" class="btn btn-success active">Home</a>
+                    </li>
+                    <li>
+                        <a href="/Home/about" class="btn btn-success">About</a>
+                    </li>
+                    <li>
+                        <a href="/Home/signup" class="btn btn-success">Sign Up</a>
+                    </li>
+                    <li>
+                        <a href="/Home/contact" class="btn btn-success">Contact</a>
+                    </li>
+                    <li>
+                        <a href="/Home/view" class="btn btn-success ">Gallery</a>
+                    </li>
+                    <li>
+                        <a href="/Home/book" class="btn btn-success ">Book Online</a>
+                    </li>
+                   
+                    <li class="nav navbar-right">
+                        <a href="/Home/login" class="btn btn-success">Login</a>
+                    </li>
+                   
+                </ul>
+                
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav> 
+    }
+    else 
+    {
+                 <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
+                <a class="navbar-brand" href="index.cshtml">
+                    <img src="~/Content/logo.png" /> </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav  nav-pills">
+                    <li>
+                        <a href="/Home/index" class="btn btn-success active">Home</a>
+                    </li>
+                    <li>
+                        <a href="/Home/about" class="btn btn-success">About</a>
+                    </li>
+                    <li>
+                        <a href="/Home/signup" class="btn btn-success">Sign Up</a>
+                    </li>
+                    <li>
+                        <a href="/Home/contact" class="btn btn-success">Contact</a>
+                    </li>
+                    <li>
+                        <a href="/Home/view" class="btn btn-success ">Gallery</a>
+                    </li>
+                    <li>
+                        <a href="/Home/book" class="btn btn-success ">Book Online</a>
+                    </li>
+                   
+                    <li class="nav navbar-right">
+                        <a href="/Home/login" class="btn btn-success">Logout</a>
+                    </li>
+                   
+                </ul>
+                
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+    }
+
+    @RenderBody()
+
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+    <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <p>Copyright &copy; besto.co.in 2015</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+</body>
+</html>

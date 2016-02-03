@@ -1,0 +1,86 @@
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Besto Guest House</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/simple-sidebar.css" rel="stylesheet">
+    <script type="text/javascript" src="~/Scripts/jquery-1.11.3.js"></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap.js"></script>
+</head>
+<body>
+
+
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-default">
+                    <a href="#">
+
+                        <img src="/Content/logo.png" height="50" width="50" />
+                        walayat
+                    </a>
+                </li>
+
+                <li>
+
+                    <a href="/Admin/Add" style="left:20px;color:lightskyblue">Add Guest</a>
+                </li>
+                <li>
+                    <a href="/Admin/View_Guest" style="left:20px;color:lightskyblue">View Guests</a>
+                </li>
+                <li>
+                    <a href="/Admin/Delete" style="left:20px;color:lightskyblue">Delete Guest</a>
+                </li>
+                <li>
+                    <a href="/Admin/Search" style="left:20px;color:lightskyblue">Search Guest</a>
+                </li>
+                 <li>
+                 <a href="/Home/login" style="left:20px;color:lightskyblue">Logout</a>
+                </li>
+
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <img src="/Content/admin.png" />
+
+
+                        <p></p>
+                        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle" style="left:15px ; color:orangered">Admin Menu In/Out</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+         @if(TempData["notice"] != null) {
+            <p class="alert alert-danger" style="text-align:right;">@TempData["notice"]</p>
+        }
+        <!-- /#page-content-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+    <!-- jQuery -->
+    <script src="/Scripts/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/Scripts/bootstrap.min.js"></script>
+    <!-- Menu Toggle Script -->
+    <script>
+        $("#menu-toggle").click(function (e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+    </script>
+</body>
+</html>
+
